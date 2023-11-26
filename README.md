@@ -1,2 +1,2 @@
-# Reconhecimento-de-Padrões-em-Marcas-e-Sinais-Animais
+# Reconhecimento de Padrões em Marcas e Sinais usados em Animais
 Este repositório abriga uma implementação de backend e frontend para um algoritmo de reconhecimento de imagens, projetado especialmente para identificar e comparar marcas e sinais utilizados em animais.
