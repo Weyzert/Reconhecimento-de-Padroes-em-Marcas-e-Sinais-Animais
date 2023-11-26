@@ -33,4 +33,4 @@ A função retorna uma lista ordenada de correspondências, contendo informaçõ
 - Victor Carneiro Cole, 183176@upf.br
 
 **Licença:**
-Este projeto está sob a licença GNU3.
+Este projeto está sob a licença GNU General Public License v3.0.
