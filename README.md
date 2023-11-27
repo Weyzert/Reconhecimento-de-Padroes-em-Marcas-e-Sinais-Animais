@@ -8,6 +8,15 @@ Este repositório contém a implementação desenvolvida no âmbito do Trabalho 
 **Objetivo:**
 O objetivo deste trabalho é utilizar técnicas de pré-processamento, processamento e visão computacional, utilizando a biblioteca OpenCV. A solução proposta visa comparar imagens de marcas e sinais utilizados na identificação de animais.
 
+---
+
+**Contextualização do Problema:**
+O desenvolvimento deste projeto é uma resposta à necessidade premente de aprimorar o processo de cadastro de marcas e sinais de animais, um aspecto vital na gestão do meio rural. Atualmente, esse cadastro envolve a digitalização da marca e do sinal dos animais, realizada por meio de scanners ou fotografias.
+
+No momento do cadastro, o produtor rural enfrenta o desafio de entregar uma imagem legível, sem desfoques e com boa iluminação da marca/sinal utilizada para a identificação do animal sob sua posse. Esta etapa é crucial para garantir a precisão e confiabilidade do cadastro digital, já que a qualidade da imagem diretamente impacta na identificação correta dos animais.
+
+Antigamente, esse processo de vinculação da marca/sinal do produtor rural, utilizado para identificar os animais em sua posse, era registrado manualmente em um livro. Entretanto, com a transição para a digitalização, surge a oportunidade de criar um algoritmo que auxilie a máquina pública durante o cadastro, garantindo que a marca/símbolo a ser registrada no sistema seja única e distinta das demais.
+
 **Funcionamento:**
 A aplicação recebe uma imagem de entrada e realiza as seguintes etapas de pré-processamento:
 ```python
