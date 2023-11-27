@@ -1,5 +1,5 @@
 # Reconhecimento de Padrões em Marcas e Sinais usados em Animais
-Este repositório abriga uma implementação de backend e frontend para um algoritmo de reconhecimento de imagens, projetado especialmente para identificar e comparar marcas e sinais utilizados em animais.
+Este repositório abriga uma implementação de backend e frontend para um algoritmo de reconhecimento de imagens, projetado especialmente para comparar imagens de marcas e sinais utilizados na identificação de animais.
 
 **Trabalho Prático de Desenvolvimento de Solução utilizando OpenCV - 2023/2**
 
