@@ -29,6 +29,8 @@ query_image = gaussianBlur.gaussiano(query_image)  # Gaussiano (Anti-Aliasing) 5
 ```
 A imagem de consulta `query_image`, bem como aquelas contidas na lista `image_list`, são processadas em escala de cinza, utilizando a `cv2.IMREAD_GRAYSCALE` para garantir consistência no tratamento das informações visuais.
 
+A `image_list` é formada a partir das imagens contidas em `myapp/static/imagens`.
+
 A aplicação então utiliza algoritmos como SIFT, FLANN, HOG, euclidean_distances e cosine_similarity para comparar a imagem de entrada com uma lista de imagens pré-definida.
 
 **Como Usar:**
