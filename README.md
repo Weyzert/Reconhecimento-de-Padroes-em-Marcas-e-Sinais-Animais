@@ -66,6 +66,18 @@ O código realiza o pré-processamento da imagem de consulta e das imagens da li
 
 A função retorna uma lista ordenada de correspondências, contendo informações como: o nome da imagem, extensão, índice (referente ao diretório), caminho, similaridade Flann, similaridade percentual Flann, índice euclidiano, distância euclidiana, similaridade cosseno, similaridade percentual cityblock, OOE (Original Order Euclidean) e OOC (Original Order Cosine).
 
+- **Distância Euclidiana:**
+  - Reflete o quão próximo de 0 o valor é, indicando uma menor distância entre os vetores (ou imagens). Valores mais próximos de zero sugerem uma maior semelhança.
+
+- **Similaridade Cosseno:**
+  - Varia de -1 a 1, onde -1 representa vetores (ou imagens) totalmente opostos, 1 indica total identidade e 0 denota vetores ortogonais. Quanto mais próximo de 1, maior a similaridade.
+
+- **Similaridade Percentual Cityblock:**
+  - Quanto menor o valor retornado, maior é a similaridade. Se for zero, os vetores (ou imagens) são idênticos; quanto maior, menor a similaridade entre eles. Esta medida é sensível a diferenças entre os valores dos descritores.
+
+- **Similaridade FLANN Matcher:**
+  - Utiliza o algoritmo FlannBasedMatcher para realizar correspondência de características. A similaridade é calculada como a razão de correspondências boas para o total de correspondências. Valores mais altos indicam uma maior confiança nas correspondências encontradas.
+
 **Contribuidores:**
 - Pedro Marcelo Roso Manica, 173722@upf.br | pedromarcelo9000@hotmail.com
 - Victor Carneiro Cole, 183176@upf.br
