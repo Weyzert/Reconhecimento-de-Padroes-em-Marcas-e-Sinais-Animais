@@ -91,6 +91,7 @@
                         <th>Distância Euclidiana</th>
                         <th>Ordem Original Cosseno</th>
                         <th>Similaridade Cosseno</th>
+                        <th>Cityblock %</th>
                         <th>Nome do Arquivo</th>
                         <th>Extensão</th>
                         <th>Imagem</th>
@@ -108,6 +109,7 @@
                             <td>{{ result.euclidean_distance }}</td>
                             <td>{{ result.original_order_cosine }}</td>
                             <td>{{ result.cosine_similarity }}</td>
+                            <td>{{ result.cityblock_similarity_percent|floatformat:3 }}</td>
                             <td>{{ result.nome }}</td>
                             <td>{{ result.extensao }}</td>
                             <td>
