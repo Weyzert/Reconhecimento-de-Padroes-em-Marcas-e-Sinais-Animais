@@ -76,7 +76,17 @@ A função retorna uma lista ordenada de correspondências, contendo informaçõ
   - Quanto menor o valor retornado, maior é a similaridade. Se for zero, os vetores (ou imagens) são idênticos; quanto maior, menor a similaridade entre eles. Esta medida é sensível a diferenças entre os valores dos descritores.
 
 - **Similaridade FLANN Matcher:**
-  - Utiliza o algoritmo FlannBasedMatcher para realizar correspondência de características. A similaridade é calculada como a razão de correspondências boas para o total de correspondências. Valores mais altos indicam uma maior confiança nas correspondências encontradas.
+  - Utiliza o algoritmo FlannBasedMatcher para realizar correspondência de características. A similaridade é calculada como a razão de correspondências boas para o total de correspondências, usando a fórmula:
+    \[
+    \text{Similaridade FLANN} = \frac{\text{Número de Correspondências Boas}}{\text{Número Total de Correspondências}}
+    \]
+  - A seleção de correspondências boas é feita através da comparação das distâncias entre as duas melhores correspondências para cada descritor:
+    ```python
+    for m, n in flann_matches:
+        if m.distance < 0.75 * n.distance:
+            flann_good_matches.append(m)
+    ```
+  - Valores mais altos indicam uma maior confiança nas correspondências encontradas.
 
 **Contribuidores:**
 - Pedro Marcelo Roso Manica, 173722@upf.br | pedromarcelo9000@hotmail.com
