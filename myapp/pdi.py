@@ -1,6 +1,7 @@
 from .preprocessamento import equalizeHist, gaussianBlur, medianBlur, resize_fixed, sobel, threshold, gama
 from skimage.feature import hog
 from sklearn.metrics.pairwise import euclidean_distances, cosine_similarity
+from scipy.spatial.distance import cityblock
 import cv2
 import numpy as np
 
@@ -69,13 +70,19 @@ def compare_images(query_image, image_list):
     # Lista para armazenar as correspondências
     matches_list = []
 
+    # Extraia características da imagem de consulta usando o descritor HOG
+    features_query = hog(query_image, pixels_per_cell=(16, 16), cells_per_block=(2, 2), block_norm="L2-Hys", visualize=False)
+
     for index, (img, nome) in enumerate(image_list):
         # Pré-processa a imagem atual na lista
         img = pre_processamento(img)
 
-        # Extrai características HOG
+        # Extrair características HOG
         features = hog(img, pixels_per_cell=(16, 16), cells_per_block=(2, 2), block_norm="L2-Hys", visualize=False)
         caracteristicas_banco_dados.append(features)
+
+        # Calcula a similaridade do Cityblock entre as características HOG da imagem de consulta e da imagem atual na lista
+        cityblock_similarity = cityblock(features_query, features)
 
         # Extrai keypoints e descritores da imagem atual na lista
         _, des_img = sift.detectAndCompute(img, None)
@@ -114,6 +121,8 @@ def compare_images(query_image, image_list):
             'path': nome,
             #'bf_similarity_percent': bf_similarity * 100.0,
             'flann_similarity_percent': flann_similarity * 100.0,
+            'cityblock_similarity_percent': cityblock_similarity * 100.0,  # Valores menores indicam maior semelhança
+            #'cityblock_similarity_percent': 100.0 - cityblock_similarity * 100.0,  # Inverte para que valores menores sejam mais semelhantes'
         })
 
     # Converte as listas em matrizes NumPy
@@ -131,7 +140,7 @@ def compare_images(query_image, image_list):
     indices_classificados_euclidiana = np.argsort(distancias_euclidianas)[0][::]
 
     # Classifica as imagens com base na similaridade do cosseno
-    # Representa a ordem das imagens com base na similaridade de cosseno, do maior para o menor.
+    # Representa a ordem das imagens com base na similaridade de cosseno, do maior para o menor
     indices_classificados_cosseno = np.argsort(-similaridade_cosseno)[0][::]
 
     # Atualiza a lista de correspondências com informações adicionais
