@@ -41,6 +41,7 @@ pip install scikit-learn
 pip install opencv-python
 pip install numpy
 pip install django
+pip install scipy
 ```
 **Instruções de Execução:**
 
@@ -61,9 +62,9 @@ pip install django
 Certifique-se de manter o terminal aberto enquanto estiver usando a aplicação localmente. Se houver alguma dúvida ou problema durante a execução, sinta-se à vontade para entrar em contato para obter ajuda.
 
 **Explicação do Código:**
-O código realiza o pré-processamento da imagem de consulta e das imagens da lista. Em seguida, utiliza o descritor SIFT para extrair keypoints e descritores. A correspondência de características é feita usando o algoritmo FlannBasedMatcher. O código também calcula a similaridade utilizando a razão de correspondências boas, a distância euclidiana e a similaridade por cosseno, incorporando características do descritor HOG (Histogram of Oriented Gradients) para a análise.
+O código realiza o pré-processamento da imagem de consulta e das imagens da lista. Em seguida, utiliza o descritor SIFT para extrair keypoints e descritores. A correspondência de características é feita usando o algoritmo FlannBasedMatcher. O código também calcula a similaridade utilizando a razão de correspondências boas, a distância euclidiana, a similaridade por cosseno, e a similaridade do Cityblock incorporando características do descritor HOG (Histogram of Oriented Gradients) para a análise.
 
-A função retorna uma lista ordenada de correspondências, contendo informações como: o nome da imagem, extensão, índice (referente ao diretório), caminho, similaridade Flann, similaridade percentual Flann, índice euclidiano, distância euclidiana, similaridade cosseno, OOE (Original Order Euclidean) e OOC (Original Order Cosine).
+A função retorna uma lista ordenada de correspondências, contendo informações como: o nome da imagem, extensão, índice (referente ao diretório), caminho, similaridade Flann, similaridade percentual Flann, índice euclidiano, distância euclidiana, similaridade cosseno, similaridade percentual cityblock, OOE (Original Order Euclidean) e OOC (Original Order Cosine).
 
 **Contribuidores:**
 - Pedro Marcelo Roso Manica, 173722@upf.br | pedromarcelo9000@hotmail.com
