@@ -95,6 +95,8 @@ O diretório `sem_frontEnd` contém o arquivo `teste.py`, que oferece uma implem
 **Nota:**
 O algoritmo implementado sem o uso do Django apresenta uma precisão mais elevada.
 
+---
+
 **Contribuidores:**
 - Pedro Marcelo Roso Manica, 173722@upf.br | pedromarcelo9000@hotmail.com
 - Victor Carneiro Cole, 183176@upf.br
