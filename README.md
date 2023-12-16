@@ -88,6 +88,13 @@ A função retorna uma lista ordenada de correspondências, contendo informaçõ
     ```
   - Valores mais altos indicam uma maior confiança nas correspondências encontradas.
 
+### Sem o Front-end
+
+O diretório `sem_frontEnd` contém o arquivo `teste.py`, que oferece uma implementação do algoritmo sem o uso do Django para a criação do Front-end. 
+
+**Nota:**
+O algoritmo implementado sem o uso do Django apresenta uma precisão mais elevada.
+
 **Contribuidores:**
 - Pedro Marcelo Roso Manica, 173722@upf.br | pedromarcelo9000@hotmail.com
 - Victor Carneiro Cole, 183176@upf.br
